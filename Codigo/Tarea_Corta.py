@@ -69,6 +69,26 @@ def OrdenarListaPivot(Lista):
     # Recursivamente ordenar las sublistas
     return OrdenarListaPivot(izquierda) + iguales + OrdenarListaPivot(derecha)
 
+"""
+Entrada: Una matriz y un valor a buscar.
+Salida: True si el valor existe en la matriz, False si no.
+Proceso: Se recorre la matriz buscando el valor en cada fila y columna.
+"""
+def existe_en_matriz(matriz, valor_buscar):
+    # Validar que matriz sea tipo list y el valor a buscar un entero
+    if not isinstance(matriz, list)  or not isinstance (valor_buscar,int):
+        raise ValueError("matriz debe ser de tipo lista y el valor a buscar debe ser entero.")
+    
+    # Recorrer cada fila y comprobar si el valor está presente
+    for fila in matriz:
+        if isinstance(fila,list):
+            for elemento in fila:
+                if elemento == valor_buscar:
+                    return True
+        else:
+            return "No es matriz"    
+    # Si no se encontró en ninguna fila, devolver False
+    return False
 
 def PruebaOrdenamiento(i, j):
     matriz=GenerarMatrizAleatoria(i, j)
@@ -83,6 +103,19 @@ def PruebaOrdenamiento(i, j):
         print(fila)
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
 
+def PruebaBusqueda(i, j, y):
+    # Prueba de la función existe_en_matriz
+    matriz = GenerarMatrizAleatoria(i, j)
 
+    inicio = time.perf_counter()
+    print("Matriz generada:")
+    for fila in matriz:
+        print(fila)
+    print(f"Buscando el valor: {y}")
+    resultado = existe_en_matriz(matriz, y)
+    print(f"Resultado de la búsqueda: {resultado}")
+    fin = time.perf_counter()
+    print(f"Tiempo de búsqueda: {(fin - inicio):.6f} segundos")
 
+PruebaBusqueda(10, 10, 5)
 PruebaOrdenamiento(10, 10)
