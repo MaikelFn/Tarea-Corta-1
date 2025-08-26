@@ -99,6 +99,7 @@ def PruebaOrdenamiento():
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
     print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
 
 
     # Prueba de Ordenamiento por Burbuja con 100 Elementos
@@ -114,6 +115,8 @@ def PruebaOrdenamiento():
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
     print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
+
 
     # Prueba de Ordenamiento por QuickSort con 1024 Elementos
     matriz=GenerarMatrizAleatoria(32, 32)
@@ -128,6 +131,7 @@ def PruebaOrdenamiento():
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
     print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
 
     # Prueba de Ordenamiento por Burbuja con 1024 Elementos
     matriz=GenerarMatrizAleatoria(32, 32)
@@ -142,6 +146,7 @@ def PruebaOrdenamiento():
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
     print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
 
     # Prueba de Ordenamiento por QuickSort con 10000 Elementos
     matriz=GenerarMatrizAleatoria(100, 100)
@@ -156,6 +161,7 @@ def PruebaOrdenamiento():
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
     print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
 
     # Prueba de Ordenamiento por Burbuja con 10000 Elementos
     matriz=GenerarMatrizAleatoria(100, 100)
@@ -170,9 +176,10 @@ def PruebaOrdenamiento():
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
     print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
 
     # Prueba de Ordenamiento por QuickSort con 100489 Elementos
-    matriz=GenerarMatrizAleatoria(100, 100)
+    matriz=GenerarMatrizAleatoria(317, 317)
     inicio = time.perf_counter()
     tracemalloc.start()
     ordenar_matriz(matriz)
@@ -183,6 +190,7 @@ def PruebaOrdenamiento():
     print("Cantidad de elementos: 100489")
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
+    print("\n")
 
     # Prueba de Ordenamiento por Burbuja con 100489 Elementos
     matriz=GenerarMatrizAleatoria(317, 317)
@@ -197,5 +205,39 @@ def PruebaOrdenamiento():
     print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
     print(f"Memoria actual usada: {memoria_actual} KB")
     print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
+
+    # Prueba de Ordenamiento por QuickSort con 1000000 Elementos
+    matriz=GenerarMatrizAleatoria(1000, 1000)
+    inicio = time.perf_counter()
+    tracemalloc.start()
+    ordenar_matriz(matriz)
+    memoria_actual, memoria_max = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    fin = time.perf_counter()
+    print("Prueba de Ordenamiento QuickSort")
+    print("Cantidad de elementos: 1000000")
+    print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
+    print(f"Memoria actual usada: {memoria_actual} KB")
+    print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")
+
+    for i in range(5):
+        print(f"{matriz[i]}")
+
+    # Prueba de Ordenamiento por Burbuja con 1000000 Elementos
+    """matriz=GenerarMatrizAleatoria(1000, 1000)
+    inicio = time.perf_counter()
+    tracemalloc.start()
+    BubleSort(matriz)
+    memoria_actual, memoria_max = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    fin = time.perf_counter()
+    print("Prueba de Ordenamiento Burbuja")
+    print("Cantidad de elementos: 1000000")
+    print(f"Tiempo de ordenamiento: {(fin - inicio):.6f} segundos")
+    print(f"Memoria actual usada: {memoria_actual} KB")
+    print(f"Memoria máxima usada: {memoria_max} KB")
+    print("\n")"""
 
 PruebaOrdenamiento()
