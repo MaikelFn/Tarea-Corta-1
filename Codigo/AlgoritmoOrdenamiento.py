@@ -222,10 +222,11 @@ def PruebaOrdenamiento():
     print(f"Memoria máxima usada: {memoria_max} KB")
     print("\n")
 
-    for i in range(5):
-        print(f"{matriz[i]}")
+    #Descomentar para mostrar la matriz
+    #for i in range(len(matriz)):
+    #    print(f"{matriz[i]}")
 
-    # Prueba de Ordenamiento por Burbuja con 1000000 Elementos
+    # Prueba de Ordenamiento por Burbuja con 1000000 Elementos (Descomentar para probar aproximadamente 5 min)
     """matriz=GenerarMatrizAleatoria(1000, 1000)
     inicio = time.perf_counter()
     tracemalloc.start()
